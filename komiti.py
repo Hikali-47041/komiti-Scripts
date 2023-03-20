@@ -20,7 +20,7 @@ komiti_path = "./komiti"
 # フォントリスト
 # Open Sans ファイル名, Roboto ファイル名, M+ ファイル名, komiti ウェイト
 font_list = [
-    ("TitilliumWeb-Thin.ttf", "Roboto-Thin.ttf", "mplus-1p-Thin.ttf", "Thin"),
+    ("TitilliumWeb-Thin.ttf", "Roboto-Thin.ttf", "mplus-1p-thin.ttf", "Thin"),
     ("TitilliumWeb-Light.ttf", "Roboto-Light.ttf", "mplus-1p-light.ttf", "Light"),
     ("TitilliumWeb-Regular.ttf", "Roboto-Regular.ttf", "mplus-1p-regular.ttf", "Regular"),
     ("TitilliumWeb-SemiBold.ttf", "Roboto-Medium.ttf", "mplus-1p-medium.ttf", "Medium"),
