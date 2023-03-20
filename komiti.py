@@ -91,7 +91,7 @@ def generate_komiti(ti_path, rb_path, mp_path, ko_path, weight, version):
     print(ti_path)
     tifont = fontforge.open(ti_path)
 
-    keep_mp1_fontname = ["zero" ,"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+    keep_mp1_fontname = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
 
     # Titillium Web に含まれるグリフを削除する
     font.selection.none()
