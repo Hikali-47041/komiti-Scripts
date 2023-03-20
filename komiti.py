@@ -84,8 +84,8 @@ def generate_komiti(ti_path, rb_path, mp_path, ko_path, weight, version):
         print("OSError:", e, "\nM+ 1p を mplus/ に展開しましたか?")
         exit(1)
 
-    # EMの大きさを1024に設定する 
-    font.em = 1024
+    # EMの大きさを960に設定する
+    font.em = 960
 
     # Titillium Web を開く
     print(ti_path)
