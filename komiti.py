@@ -91,11 +91,13 @@ def generate_komiti(ti_path, rb_path, mp_path, ko_path, weight, version):
     print(ti_path)
     tifont = fontforge.open(ti_path)
 
+    keep_mp1_fontname = ["zero" ,"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+
     # Titillium Web に含まれるグリフを削除する
     font.selection.none()
     tifont.selection.all()
     for glyph in tifont.selection.byGlyphs:
-        if glyph.glyphname in font:
+        if glyph.glyphname not in keep_mp1_fontname and glyph.glyphname in font:
             font.selection.select(("more",), glyph.glyphname)
     font.clear()
 
