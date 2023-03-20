@@ -18,7 +18,7 @@ mplus_path = "./mplus"
 komiti_path = "./komiti"
 
 # フォントリスト
-# Open Sans ファイル名, Roboto ファイル名, M+ ファイル名, komiti ウェイト
+# Titillium Web ファイル名, Roboto ファイル名, M+ ファイル名, komiti ウェイト
 font_list = [
     ("TitilliumWeb-Light.ttf", "Roboto-Light.ttf", "mplus-1p-light.ttf", "Light"),
     ("TitilliumWeb-Regular.ttf", "Roboto-Regular.ttf", "mplus-1p-regular.ttf", "Regular"),
