@@ -126,6 +126,9 @@ def generate_komiti(ti_path, rb_path, mp_path, ko_path, weight, version):
     # Grid Fittingの設定
     font.gasp = komiti_gasp()
 
+    # set font em again
+    font.em = 1024
+
     # TTF の生成
     font.generate(ko_path, '', ('short-post', 'opentype', 'PfEd-lookups'))
 
