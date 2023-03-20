@@ -2,16 +2,20 @@
 
 bldblu=${txtbld}$(tput setaf 4)
 
-cd opensans
-wget https://fonts.google.com/download?family=Open+Sans -O opensans.zip
-unzip opensans.zip
+
+[ ! -e titilliumweb ] && mkdir -p titilliumweb
+cd titilliumweb
+wget https://fonts.google.com/download?family=Titillium%20Web -O titilliumweb.zip
+unzip titilliumweb.zip
 cd ../
 
+[ ! -e roboto ] && mkdir -p roboto
 cd roboto
 wget https://fonts.google.com/download?family=Roboto -O roboto.zip
 unzip roboto.zip
 cd ../
 
+echo ""
 echo "${bldblu}                        **                        "
 echo "${bldblu}                      **# **                      "
 echo "${bldblu}                    **##### **                    "
@@ -37,8 +41,10 @@ echo "${bldblu}                       * #####**                  "
 echo "${bldblu}                      *#####**                    "
 echo "${bldblu}                      ** #**                      "
 echo "${bldblu}                        **                        "
+echo ""
 
-echo "Koruri を生成するには FontForge をインストールし、"
+echo "komiti is fork of Koruri (https://github.com/koruri/koruri)"
+echo "komiti を生成するには FontForge をインストールし、"
 echo "最新の M+ 1p を mplus/ に展開した後、以下を実行してください"
-echo "fontforge -lang=py -script koruri.py"
+echo "fontforge -lang=py -script komiti.py"
 tput sgr0

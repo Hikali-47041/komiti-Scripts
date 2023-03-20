@@ -1,18 +1,19 @@
 # Scripts
 
-[Koruri](https://koruri.github.io/) をビルドするためのスクリプトです。
+[komiti](https://komiti.github.io/) をビルドするためのスクリプトです。  
+komitiは[koruri](https://koruri.github.io/) のforkです。
 
 ## 使い方
 
 ```
-git clone https://github.com/Koruri/Scripts.git make_koruri
+git clone https://github.com/Koruri/Scripts.git make_komiti
 ```
 
 ```
-cd make_koruri
+cd make_komiti
 ```
 
-Open Sans と Roboto は `setup.sh` の中でダウンロード、展開されます。
+Titillium Web と Roboto は `setup.sh` の中でGoogle Fontsからダウンロード、展開されます。
 
 ```
 ./setup.sh
@@ -25,5 +26,5 @@ Open Sans と Roboto は `setup.sh` の中でダウンロード、展開され�
 * [FontForge](https://fontforge.org/) をインストールしておく
 
 ```
-fontforge -lang=py -script koruri.py
+fontforge -lang=py -script komiti.py
 ```
