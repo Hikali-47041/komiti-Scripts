@@ -1,4 +1,4 @@
-# Scripts
+# komiti Build Scripts
 
 [komiti](https://komiti.github.io/) をビルドするためのスクリプトです。  
 komitiは[koruri](https://koruri.github.io/) のforkです。
