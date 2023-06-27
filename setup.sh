@@ -9,12 +9,6 @@ wget https://fonts.google.com/download?family=Titillium%20Web -O titilliumweb.zi
 unzip titilliumweb.zip
 cd ../
 
-[ ! -e roboto ] && mkdir -p roboto
-cd roboto
-wget https://fonts.google.com/download?family=Roboto -O roboto.zip
-unzip roboto.zip
-cd ../
-
 echo ""
 echo "${bldblu}                        **                        "
 echo "${bldblu}                      **# **                      "

@@ -7,9 +7,6 @@ from datetime import date
 # Titilium Web のあるディレクトリのパス
 titillium_path = "./titilliumweb"
 
-# Roboto のあるディレクトリのパス
-roboto_path = "./roboto"
-
 # M+ のあるディレクトリのパス
 mplus_path = "./mplus"
 
@@ -18,13 +15,13 @@ mplus_path = "./mplus"
 komiti_path = "./komiti"
 
 # フォントリスト
-# Titillium Web ファイル名, Roboto ファイル名, M+ ファイル名, komiti ウェイト
+# Titillium Web ファイル名, M+ ファイル名, komiti ウェイト
 font_list = [
-    ("TitilliumWeb-Light.ttf", "Roboto-Light.ttf", "mplus-1p-light.ttf", "Light"),
-    ("TitilliumWeb-Regular.ttf", "Roboto-Regular.ttf", "mplus-1p-regular.ttf", "Regular"),
-    ("TitilliumWeb-SemiBold.ttf", "Roboto-Medium.ttf", "mplus-1p-medium.ttf", "Medium"),
-    ("TitilliumWeb-Bold.ttf", "Roboto-Bold.ttf", "mplus-1p-bold.ttf", "Bold"),
-    ("TitilliumWeb-Black.ttf", "Roboto-Black.ttf", "mplus-1p-heavy.ttf", "Black"),
+    ("TitilliumWeb-Light.ttf", "mplus-1p-light.ttf", "Light"),
+    ("TitilliumWeb-Regular.ttf", "mplus-1p-regular.ttf", "Regular"),
+    ("TitilliumWeb-SemiBold.ttf", "mplus-1p-medium.ttf", "Medium"),
+    ("TitilliumWeb-Bold.ttf", "mplus-1p-bold.ttf", "Bold"),
+    ("TitilliumWeb-Black.ttf", "mplus-1p-heavy.ttf", "Black"),
 ]
 
 def main():
@@ -37,21 +34,17 @@ def main():
 
     for (ti, rb, mp, weight) in font_list:
         ti_path = "{0}/{1}".format(titillium_path, ti)
-        rb_path = "{0}/{1}".format(roboto_path, rb)
         mp_path = "{0}/{1}".format(mplus_path, mp)
         ko_path = "{0}/komiti-{1}.ttf".format(komiti_path, weight)
-        generate_komiti(ti_path, rb_path, mp_path, ko_path, weight, version)
+        generate_komiti(ti_path, mp_path, ko_path, weight, version)
 
 def komiti_sfnt_names(weight, version):
     return (
         ('English (US)', 'Copyright',
          '''\
          komiti: Copyright (c) 2023- Hikali.
-         komiti is fork of Koruri.
-         Koruri: Copyright (c) 2013- lindwurm.
 
          titillium Web: 2009-2011 by Accademia di Belle Arti di Urbino and students of MA course of Visual design.
-         Roboto: Copyright (c) 2012- Google.
          M+ OUTLINE FONTS: Copyright (C) 2002- M+ FONTS PROJECT.'''),
         ("English (US)", "License",
          "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
@@ -103,21 +96,6 @@ def generate_komiti(ti_path, rb_path, mp_path, ko_path, weight, version):
 
     # Titillium Web をマージする
     font.mergeFonts(ti_path)
-
-    # Fancy Colon を Roboto からコピーする
-    rbfont = fontforge.open(rb_path)
-    
-    # Fancy Colon をコピー
-    rbfont.selection.select(0xee01)
-    rbfont.copy()
-    font.selection.select(0xee01)
-    font.paste()
-
-    # Fancy Colon を U+A789 にコピー
-    font.selection.select(0xee01)
-    font.copy()
-    font.selection.select(0xa789)
-    font.paste()
 
     # フォント情報の設定
     font.sfnt_names = komiti_sfnt_names(weight, version)
